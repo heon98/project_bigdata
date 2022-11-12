@@ -10,7 +10,7 @@
     - In bigdata_playdata
     
   3) Who
-    - Team
+    - Mini project Team in Playdata
     
   4) What
     - Sentiment Analysis using RankingDak's product review
