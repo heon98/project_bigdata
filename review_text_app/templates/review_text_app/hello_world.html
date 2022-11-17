@@ -1,9 +1,65 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div style="height: 20rem; background-color: #38df81; border-radius:1rem; margin: 2rem;">
-    <h1>
-        testing
-    </h1>
+  <div >
+      <div class="keyword" >
+        <form class="key_category">
+            카테고리
+            <select name="category" >
+                <option value="none"  selected>=== 선택 ===</option>
+                <option value="chicken" >치킨</option>
+                <option value="pizza">피자/양식</option>
+                <option value="chinese">중국집</option>
+                <option value="korean" >한식</option>
+                <option value="japanese">일식/돈까스</option>
+                <option value="jokbal">족발/보쌈</option>
+                <option value="night" >야식</option>
+                <option value="tteok">분식</option>
+                <option value="cafe">카페/디저트</option>
+            </select>
+        </form>
+        <form class="key_taste">
+            맛
+            <select name="taste" >
+                <option value="none"  selected>=== 선택 ===</option>
+                <option value="good" >좋음</option>
+                <option value="soso">보통</option>
+                <option value="bad">나쁨</option>
+            </select>
+        </form>
+        <form class="key_quantity">
+            양
+            <select name="quantity" >
+                <option value="none"  selected>=== 선택 ===</option>
+                <option value="good" >좋음</option>
+                <option value="soso">보통</option>
+                <option value="bad">나쁨</option>
+            </select>
+        </form>
+        <form class="key_delivery">
+            배달
+            <select name="delivery" >
+                <option value="none"  selected>=== 선택 ===</option>
+                <option value="good" >좋음</option>
+                <option value="soso">보통</option>
+                <option value="bad">나쁨</option>
+            </select>
+        </form>
+          <button class="create_btn">
+              생성
+          </button>
+      </div>
+      <div>
+        <form class="text_box" style="text-align: center">
+
+            <input type = "text"  style="width:500px;height:200px;font-size:15px;">
+
+        </form>
+      </div>
+      <div>
+          <button class="copy_btn">
+            복사하기
+          </button>
+      </div>
   </div>
 {% endblock %}

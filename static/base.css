@@ -1,0 +1,76 @@
+.header_logo {
+    font-family: 'Gugi', cursive;
+
+}
+
+.footer_logo {
+    font-family: 'Gugi', cursive;
+
+}
+
+.main_body{
+    font-family:'Nanum Myeongjo', serif;
+}
+
+.keyword{
+    position:relative;
+    text-align: center;
+    margin : 2rem;
+}
+
+.key_category{
+    display: inline;
+    margin-right: 15px;
+}
+
+.key_taste{
+    display: inline;
+    margin-right: 15px;
+}
+
+.key_quantity{
+    display: inline;
+    margin-right: 15px;
+}
+
+.key_delivery{
+    display: inline;
+    margin-right: 15px;
+}
+
+.text_box{
+    margin:1rem;
+}
+.copy_btn{
+    margin: auto;
+    display: block;
+    border-radius: 5px;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.4s;
+    border: 1px solid silver;
+}
+
+
+.copy_btn:hover {
+      background: lightblue;
+      color: white;
+}
+
+.create_btn{
+      display: inline;
+      border-radius: 5px;
+      -webkit-transition-duration: 0.2s; /* Safari */
+      transition-duration: 0.4s;
+      border: 1px solid silver;
+
+}
+
+
+.create_btn:hover {
+      background: lightblue;
+      color: white;
+ }
+
+.footer_btn{
+        font-size:.6rem;
+}
