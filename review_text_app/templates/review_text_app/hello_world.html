@@ -65,5 +65,14 @@
             복사하기
           </button>
       </div>
+      <form action="/review_text_app/hello_world/" method="post" >
+          {% csrf_token %}
+          <input type="submit" class ="btn btn-primary" value="POST">
+      </form>
+
+      <h1>
+          {{ text }}
+      </h1>
+
   </div>
 {% endblock %}
