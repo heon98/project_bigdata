@@ -1,78 +1,93 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div >
-      <div class="select_line">
-          <div class="select_boxs" >
-            <form class="key_category">
-                카테고리
-                <select name="category" >
-                    <option value="none"  selected>=== 선택 ===</option>
-                    <option value="chicken" >치킨</option>
-                    <option value="pizza">피자/양식</option>
-                    <option value="chinese">중국집</option>
-                    <option value="korean" >한식</option>
-                    <option value="japanese">일식/돈까스</option>
-                    <option value="jokbal">족발/보쌈</option>
-                    <option value="night" >야식</option>
-                    <option value="tteok">분식</option>
-                    <option value="cafe">카페/디저트</option>
-                </select>
-            </form>
-            <form class="key_taste">
-                맛
-                <select name="taste" >
-                    <option value="none"  selected>=== 선택 ===</option>
-                    <option value="good" >좋음</option>
-                    <option value="soso">보통</option>
-                    <option value="bad">나쁨</option>
-                </select>
-            </form>
-            <form class="key_quantity">
-                양
-                <select name="quantity" >
-                    <option value="none"  selected>=== 선택 ===</option>
-                    <option value="good" >좋음</option>
-                    <option value="soso">보통</option>
-                    <option value="bad">나쁨</option>
-                </select>
-            </form>
-            <form class="key_delivery">
-                배달
-                <select name="delivery" >
-                    <option value="none"  selected>=== 선택 ===</option>
-                    <option value="good" >좋음</option>
-                    <option value="soso">보통</option>
-                    <option value="bad">나쁨</option>
-                </select>
-            </form>
-          </div>
-          <button class="create_btn">
-              생성
+
+  <div style="text-align: center; " class="content_box" >
+    <form method="GET" action="/review_text_app/hello_world/" class="select_form" id="select_form_id" style="height: 9rem; font-size: .93rem; ">
+      <div class="category_keyword" style=" margin-bottom: .7rem;" >
+        <div class="select_box">
+            카테고리
+            <select name="category" >
+                <option value="None"  selected>=== 선택 ===</option>
+                <option value="chicken" >치킨</option>
+                <option value="pizza">피자/양식</option>
+                <option value="joongsik">중국집</option>
+                <option value="hansik" >한식</option>
+                <option value="ilsik">일식/돈까스</option>
+                <option value="jokbo">족발/보쌈</option>
+                <option value="bunsik">분식</option>
+                <option value="cafe">카페/디저트</option>
+            </select>
+        </div>
+        <div class="menu_input" name ="menu_name" style="display: inline;">
+            메뉴 키워드
+            <input  type="text" name ="menu_text" placeholder="ex) 떡볶이, 마늘보쌈" >
+        </div>
+      </div>
+
+      <div class_name="select_boxs">
+          <div class="select_box">
+            맛
+            <select name="taste" >
+                <option value="2"  selected>=== 선택 ===</option>
+                <option value="2" >😋 좋음</option>
+                <option value="1">🙂 보통</option>
+                <option value="0">😠 나쁨</option>
+            </select>
+        </div>
+        <div class="select_box">
+            양
+            <select name="quantity" >
+                <option value="2"  selected>=== 선택 ===</option>
+                <option value="2" >😋 좋음</option>
+                <option value="1">🙂 보통</option>
+                <option value="0">😠 나쁨</option>
+            </select>
+        </div>
+        <div class="select_box">
+            배달
+            <select name="delivery" >
+                <option value="2"  selected>=== 선택 ===</option>
+                <option value="2" >😋 좋음</option>
+                <option value="1">🙂 보통</option>
+                <option value="0">😠 나쁨</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="create_div" style="margin-top: 1rem; height: 3rem;">
+        <input type = "submit" value = "리뷰 생성" class="create_btn" id="create_btn_id">
+      </div>
+
+    </form>
+
+
+
+    <div class="text_div" >
+        <textarea  style="width:600px;height:200px;font-size:15px; padding:1rem;  "  id="review_text" >{{trained_text}} </textarea>
+    </div>
+
+      <div class = "copy_div" >
+          <button class = "review_btn" style="margin-right: 1rem; font-size: .93rem; display:inline">
+              리뷰가 맘에 안들어요
+          </button>
+          <button class="copy_btn" onclick="copyToClipboard()" style="margin: auto; font-size: .93rem;display:inline">
+              클립보드에 복사하기
           </button>
       </div>
 
 
-      <div>
-        <form class="text_box" style="text-align: center">
 
-            <input type = "text"  style="width:500px;height:200px;font-size:15px;">
+    <script>
+      function copyToClipboard(){
+        var review = document.getElementById("review_text");
+        review.select();
+        document.execCommand('copy');
+        alert("클립보드에 복사되었습니다.");
+      }
 
-        </form>
-      </div>
-      <div class="copy_btn_div">
-          <button class="copy_btn">
-            복사하기
-          </button>
-      </div>
-      <form action="/review_text_app/hello_world/" method="post" >
-          {% csrf_token %}
-          <input type="submit" class ="btn btn-primary" value="POST">
-      </form>
 
-      <h1>
-          {{ text }}
-      </h1>
+    </script>
 
   </div>
 {% endblock %}

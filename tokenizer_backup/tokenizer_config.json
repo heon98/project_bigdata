@@ -1,0 +1,10 @@
+{
+  "bos_token": "</s>",
+  "eos_token": "</s>",
+  "mask_token": "<mask>",
+  "name_or_path": "skt/kogpt2-base-v2",
+  "pad_token": "<pad>",
+  "special_tokens_map_file": null,
+  "tokenizer_class": "PreTrainedTokenizerFast",
+  "unk_token": "<unk>"
+}
